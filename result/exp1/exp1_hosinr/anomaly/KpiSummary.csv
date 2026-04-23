@@ -1,0 +1,2 @@
+cell_rows,unique_ues,unique_cells,cell_transition_changes,handover_events,handover_participant_ues,first_handover_time_s,last_handover_time_s,pdcp_rows,total_tx_pdus,total_rx_pdus,total_tx_bytes,total_rx_bytes,packet_loss_rate_pct,approx_tx_throughput_mbps,approx_rx_throughput_mbps,mean_delay_s,weighted_delay_s,duration_s
+461,12,5,222,58,9,0.150768,6.68027,780,313715,73733,410966636,96562053,76.49682036243087,505.80509046153844,118.84560369230769,0.8586320726923077,0.7937227179241317,6.5
