@@ -210,3 +210,127 @@ The strongest evidence comes from:
 - received throughput around the handover window,
 - delay around the handover window.
 
+
+## Model Training, Catalog, and Intent Selection
+
+After data collection, the next stage is to train a small set of candidate models on the handover-window features and store their evaluation results in a catalog.
+
+### Trained Models
+
+For exp1 handover misconfiguration, the current model set is:
+
+- Random Forest
+- Boosting
+- Logistic Regression
+- SVM
+
+### Per-Model Training Commands
+
+Each script trains and tests one model, then saves:
+
+- `model.pkl`
+- `metrics.json`
+- `catalog_entry.json`
+
+Example commands from the exp1 results workspace:
+
+```bash
+python3 train_exp1_random_forest.py \
+  --normal-csv ../exp1_hosinr/handover_window_results/normal_handover_windows.csv \
+  --anomaly-csv ../exp1_hosinr/handover_window_results/anomaly_handover_windows.csv \
+  --output-dir ../exp1_hosinr/model_outputs/random_forest
+
+python3 train_exp1_boosting.py \
+  --normal-csv ../exp1_hosinr/handover_window_results/normal_handover_windows.csv \
+  --anomaly-csv ../exp1_hosinr/handover_window_results/anomaly_handover_windows.csv \
+  --output-dir ../exp1_hosinr/model_outputs/boosting
+
+python3 train_exp1_logistic_regression.py \
+  --normal-csv ../exp1_hosinr/handover_window_results/normal_handover_windows.csv \
+  --anomaly-csv ../exp1_hosinr/handover_window_results/anomaly_handover_windows.csv \
+  --output-dir ../exp1_hosinr/model_outputs/logistic_regression
+
+python3 train_exp1_svm.py \
+  --normal-csv ../exp1_hosinr/handover_window_results/normal_handover_windows.csv \
+  --anomaly-csv ../exp1_hosinr/handover_window_results/anomaly_handover_windows.csv \
+  --output-dir ../exp1_hosinr/model_outputs/svm
+```
+
+### Build the Final Model Catalog
+
+After the four models finish training, combine their outputs into one catalog:
+
+```bash
+python3 scripts/build_exp1_model_catalog.py \
+  --model-outputs-dir ../exp1_hosinr/model_outputs \
+  --output-catalog ../exp1_hosinr/model_catalog.json \
+  --output-summary ../exp1_hosinr/model_results.csv \
+  --output-index ../exp1_hosinr/model_index.json
+```
+
+This creates:
+
+- `model_catalog.json`
+- `model_results.csv`
+- `model_index.json`
+
+### Rule-Based Intent Selection
+
+The operator then provides an intent string, and the rule-based selector chooses the best model from the catalog.
+
+Example:
+
+```bash
+python3 scripts/select_exp1_model_by_intent.py \
+  --catalog ../exp1_hosinr/model_catalog.json \
+  --index ../exp1_hosinr/model_index.json \
+  --intent "Detect handover misconfiguration with high accuracy"
+```
+
+Typical intent mappings:
+
+- `high accuracy` -> SVM
+- `low latency` -> Boosting
+- `interpretability` or `labeled` -> Random Forest
+- `simple` / `baseline` / `linear` -> Logistic Regression
+
+### What the Catalog Stores
+
+Each catalog entry keeps:
+
+- model name
+- task type
+- input type
+- accuracy
+- inference latency
+- training cost
+- label requirement
+- tags
+- description
+
+## Optional Synthetic Smoke Test
+
+If you only want a quick internal demo without real traces, the synthetic path is still available:
+
+```bash
+python3 -m ns_oran_intent_selector.pipeline
+python3 -m ns_oran_intent_selector.demo
+```
+
+This is a fallback only.
+The real project path is the trace-export workflow described above.
+
+## Repository Hygiene
+
+Keep generated files out of Git:
+
+- `artifacts/`
+- `logs/`
+- `__pycache__/`
+- `.DS_Store`
+
+## Suggested GitHub Story
+
+When you push this repo, describe it as:
+
+> A telemetry-driven ns-O-RAN handover diagnosis workflow that converts real simulator traces into a shared KPI schema, compares normal and anomaly runs, and uses a lightweight rule-based selector to recommend handover tuning changes.
