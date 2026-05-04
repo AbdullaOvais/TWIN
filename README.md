@@ -99,10 +99,11 @@ docker start e2term e2mgr e2rtmansim db sample-xapp-24
 docker logs -f e2term
 ```
 
-Optional xApp logs:
+live trace watch:
 
 ```bash
-docker logs -f sample-xapp-24
+tail -f CellIdStatsHandover.txt
+
 ```
 
 What this does:
@@ -133,7 +134,7 @@ This terminal runs the simulator and generates the raw telemetry files.
 
 ```bash
 cd ~/Desktop/TWIN/ns-o-ran/ns-3-mmwave-oran
-./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=3.0 --timeToTrigger=256"
+./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=3.0 --TimeToTrigger=256"
 ```
 
 What this does:
@@ -156,21 +157,21 @@ Example 1: `hoSinrDifference` anomaly
 
 ```bash
 cd ~/Desktop/TWIN/ns-o-ran/ns-3-mmwave-oran
-./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=18 --hysteresis=3.0 --timeToTrigger=256"
+./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=18 --hysteresis=3.0 --TimeToTrigger=256"
 ```
 
 Example 2: hysteresis anomaly
 
 ```bash
 cd ~/Desktop/TWIN/ns-o-ran/ns-3-mmwave-oran
-./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=0.5 --timeToTrigger=256"
+./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=0.5 --TimeToTrigger=256"
 ```
 
 Example 3: time-to-trigger anomaly
 
 ```bash
 cd ~/Desktop/TWIN/ns-o-ran/ns-3-mmwave-oran
-./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=3.0 --timeToTrigger=40"
+./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=3.0 --TimeToTrigger=40"
 ```
 
 What this does:
