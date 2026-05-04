@@ -136,6 +136,13 @@ This terminal runs the simulator and generates the raw telemetry files.
 cd ~/Desktop/TWIN/ns-o-ran/ns-3-mmwave-oran
 ./ns3 run "scratch/scenario-zero.cc --e2TermIp=10.0.2.1 --enableE2FileLogging=1 --simTime=60 --hoSinrDifference=3 --hysteresis=3.0 --TimeToTrigger=256"
 ```
+live trace watch:
+
+```bash
+tail -f CellIdStatsHandover.txt
+
+```
+
 
 What this does:
 
