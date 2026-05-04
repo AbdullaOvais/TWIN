@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ns-3 / ns-O-RAN experiment environment
 Docker for the RIC stack
 
-This repository is the local analysis companion for a real **ns-O-RAN handover** study.
+## This repository is the local analysis companion for a real **ns-O-RAN handover** study.
 
 The main idea is simple:
 
