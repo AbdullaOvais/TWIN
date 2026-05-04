@@ -8,11 +8,11 @@ The project focuses on one exp1 handover scenario where hoSinrDifference is chan
 The reported pipeline is telemetry-driven and rule-based. Optional LLM helpers exist in the package, but they are not part of the main evaluated path.
 
 ## Setup Instructions
-Requirements
-Python 3.10+
-pip install -r requirements.txt
-ns-3 / ns-O-RAN experiment environment
-Docker for the RIC stack
+. Requirements
+1. Python 3.10+
+2. pip install -r requirements.txt
+3. ns-3 / ns-O-RAN experiment environment
+4. Docker for the RIC stack
 
 ## This repository is the local analysis companion for a real **ns-O-RAN handover** study.
 
