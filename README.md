@@ -17,7 +17,7 @@ The reported pipeline is telemetry-driven and rule-based. Optional LLM helpers e
 
 The main idea is simple:
 
-1. collect raw telemetry from a real ns-O-RAN / ns-3 experiment,
+1. collect raw telemetry from a real ns-O-RAN / ns-3 by handover misconfiguration through "hosinrdiffrence",hysteresis",timetotrigger" experiment,
 2. convert those raw traces into a shared KPI schema,
 3. compare normal versus anomaly runs around the handover window,
 4. train lightweight detectors, and
