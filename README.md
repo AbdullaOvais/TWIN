@@ -8,9 +8,9 @@ The project focuses on one exp1 handover scenario where hoSinrDifference is chan
 The reported pipeline is telemetry-driven and rule-based. Optional LLM helpers exist in the package, but they are not part of the main evaluated path.
 
 ## Setup Instructions
-. Requirements
+- Requirements
 1. Python 3.10+
-2. ns-3 / ns-O-RAN experiment environment
+2. First do the setup for this ns-3 / ns-O-RAN 
 3. Docker for the RIC stack
 
 ## This repository is the local analysis companion for a real **ns-O-RAN handover** study.
@@ -45,7 +45,6 @@ You run the simulator and RIC in your experiment environment, then feed the expo
 ## Prerequisites
 
 - Python 3.10+ recommended
-- `pip install -r requirements.txt`
 - A real ns-O-RAN run that produces these raw files in each bundle directory:
   - `CellIdStats.txt`
   - `CellIdStatsHandover.txt`
