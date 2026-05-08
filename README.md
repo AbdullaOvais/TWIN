@@ -10,9 +10,8 @@ The reported pipeline is telemetry-driven and rule-based. Optional LLM helpers e
 ## Setup Instructions
 . Requirements
 1. Python 3.10+
-2. pip install -r requirements.txt
-3. ns-3 / ns-O-RAN experiment environment
-4. Docker for the RIC stack
+2. ns-3 / ns-O-RAN experiment environment
+3. Docker for the RIC stack
 
 ## This repository is the local analysis companion for a real **ns-O-RAN handover** study.
 
