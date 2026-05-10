@@ -1,0 +1,26 @@
+{
+  "Gradient Boosting": {
+    "model_dir": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/boosting",
+    "model_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/boosting/gradient_boosting.pkl",
+    "metrics_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/boosting/metrics.json",
+    "catalog_entry_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/boosting/catalog_entry.json"
+  },
+  "Logistic Regression": {
+    "model_dir": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/logistic_regression",
+    "model_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/logistic_regression/logistic_regression.pkl",
+    "metrics_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/logistic_regression/metrics.json",
+    "catalog_entry_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/logistic_regression/catalog_entry.json"
+  },
+  "Random Forest": {
+    "model_dir": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/random_forest",
+    "model_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/random_forest/random_forest.pkl",
+    "metrics_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/random_forest/metrics.json",
+    "catalog_entry_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/random_forest/catalog_entry.json"
+  },
+  "SVM": {
+    "model_dir": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/svm",
+    "model_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/svm/svm.pkl",
+    "metrics_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/svm/metrics.json",
+    "catalog_entry_path": "/home/abdullaovais/Desktop/TWIN/ns-o-ran/results/scripts/exp/model_outputs/svm/catalog_entry.json"
+  }
+}
