@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Gradient Boosting",
+    "task_type": "binary classification",
+    "input_type": "handover-window KPI features",
+    "accuracy": 1.0,
+    "inference_latency_ms": 0.09828461334109306,
+    "training_cost": "medium",
+    "label_requirement": "labeled",
+    "tags": [
+      "exp1",
+      "handover",
+      "tabular",
+      "supervised",
+      "boosting"
+    ],
+    "description": "Trained on exp1 normal vs anomaly handover windows. Test accuracy=1.000, F1=1.000, latency=0.098 ms."
+  },
+  {
+    "name": "Logistic Regression",
+    "task_type": "binary classification",
+    "input_type": "handover-window KPI features",
+    "accuracy": 0.4,
+    "inference_latency_ms": 0.14712214469909668,
+    "training_cost": "low",
+    "label_requirement": "labeled",
+    "tags": [
+      "exp1",
+      "handover",
+      "tabular",
+      "supervised",
+      "linear"
+    ],
+    "description": "Trained on exp1 normal vs anomaly handover windows. Test accuracy=0.400, F1=0.000, latency=0.147 ms."
+  },
+  {
+    "name": "Random Forest",
+    "task_type": "binary classification",
+    "input_type": "handover-window KPI features",
+    "accuracy": 1.0,
+    "inference_latency_ms": 30.706072971224785,
+    "training_cost": "low",
+    "label_requirement": "labeled",
+    "tags": [
+      "exp1",
+      "handover",
+      "tabular",
+      "supervised",
+      "interpretable"
+    ],
+    "description": "Trained on exp1 normal vs anomaly handover windows. Test accuracy=1.000, F1=1.000, latency=30.706 ms."
+  },
+  {
+    "name": "SVM",
+    "task_type": "binary classification",
+    "input_type": "handover-window KPI features",
+    "accuracy": 0.8,
+    "inference_latency_ms": 0.1551697961986065,
+    "training_cost": "medium",
+    "label_requirement": "labeled",
+    "tags": [
+      "exp1",
+      "handover",
+      "tabular",
+      "supervised",
+      "margin-based"
+    ],
+    "description": "Trained on exp1 normal vs anomaly handover windows. Test accuracy=0.800, F1=0.800, latency=0.155 ms."
+  }
+]
